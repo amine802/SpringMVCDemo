@@ -2,7 +2,7 @@ node ("master") {
 
 	// Change the project version
 	env.BN = VersionNumber([
-			versionNumberString : '${BUILD_MONTH}.${BUILD_TODAY}.${BUILD_NUMBER}',
+			versionNumberString : '${BUILD_MONTH}.${BUILD_TODAY}${BUILD_NUMBER}',
 			projectStartDate : '2017-11-29',
 			versionPrefix : 'v1.'
 		])
