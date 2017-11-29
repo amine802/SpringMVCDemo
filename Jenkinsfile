@@ -2,7 +2,7 @@ node ("master") {
 
 	// Change the project version
 	env.BN = VersionNumber([
-			versionNumberString : '$(BUILD_MONTH).$(BUILD_TODAY).$(BUILD_NUMBER)',
+			versionNumberString : '${BUILD_MONTH}.${BUILD_TODAY}.${BUILD_NUMBER}',
 			projectStartDate : '2017-11-29',
 			versionPrefix : 'v1.'
 		])
@@ -10,9 +10,5 @@ node ("master") {
 	stage('Provision'){
 		echo 'Checkout source code from GitHub ...'
 		git branch: 'developer', credentialsID: 'GitHub', url: 'git@github.com:amine802/SpringMVCDemo.git'
-
-		echo 'Change the project version ...'
-		def W_M2_HOME = tool 'Maven'
-		bat "${W_M2_HOME}\\bin\\mv versions:set -DnewVersion=$BN -DegenerateBackupPoms=false"
 	}
 }
