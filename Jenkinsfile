@@ -13,6 +13,6 @@ node ("master") {
 
 		echo 'Change the project version ...'
 		def W_M2_HOME = tool 'Maven'
-		bat "$(W_M2_HOME)\\bin\\mv versions:set -DnewVersion=$BN -DegenerateBackupPoms=false"
+		bat "${W_M2_HOME}\\bin\\mv versions:set -DnewVersion=$BN -DegenerateBackupPoms=false"
 	}
 }
